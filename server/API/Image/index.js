@@ -34,7 +34,7 @@ Prams       none
 Access      Public
 Method      Get
 */
-Router.get("/", upload.single("file"), async(req,res) => {
+Router.post("/", upload.single("file"), async(req,res) => {
     try {
         
         const file=req.file;
@@ -59,9 +59,9 @@ Router.get("/", upload.single("file"), async(req,res) => {
         //     );
         // };
 
-        const uploadImage = await s3Upload(bucketOptions);
+        // const uploadImage = await s3Upload(bucketOptions);
 
-        return res.status(200).json({ uploadImage });
+        return res.status(200).json({ file });
 
 
     } catch (error) {
