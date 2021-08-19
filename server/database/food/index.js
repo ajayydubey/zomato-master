@@ -17,12 +17,18 @@ const FoodSchema =new mongoose.Schema({
     },
 ],
 
-    restraunt : {
+    restaurant : {
         type : mongoose.Types.ObjectId,
-        ref:"Restaurents",
+        ref:"Restaurants",
         required : true,
     }
  
-});
+},
 
-export const FoodModal = mongoose.model("Foods",FoodSchema);
+{
+    timestamps:true, //createdAs updatedAs
+}
+
+);
+
+export const FoodModel = mongoose.model("Foods",FoodSchema);
